@@ -6,7 +6,7 @@ const verifyAuth = (req, res, next) => {
   if (authHeader) {
     const token = authHeader.replace("Bearer ", "");
 
-    const valid = jwt.verify(token, "mySecretKey");
+    const valid = jwt.verify(token, "mySecretkey");
 
     if (valid) {
       next();
