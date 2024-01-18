@@ -81,6 +81,14 @@ router.get("/:id", (req, res) => {
   });
 });
 
+//Get all diary
+
+router.get("/all", (req, res) => {
+  connection.query("SELECT * FROM diary", (err, result) => {
+    return res.status(200).json(result);
+  });
+});
+
 //delete diary
 
 router.delete("/:id", (req, res) => {
